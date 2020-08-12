@@ -1,0 +1,67 @@
+{% from '_macros/_macro_flash_alerts.html.j2' import flash_alerts %}
+{% from '_macros/_macro_navbar.html.j2' import macro_nav %}
+{% from '_macros/_macro_dropdown_menu.html.j2' import macro_dropdown_menu %}
+{% from '_macros/_macro_sidebar.html.j2' import macro_sidebar %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--Meta Tags-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <meta autor="@oswscript">
+
+    <!--Title-->
+    <title>{% block title %} {% endblock %}</title>
+
+    <!--STYLES-->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='custom-css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+
+    <!--Data tables-->
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>  
+        
+    <!-- Sidebar Admin Panel -->
+    {% if request.path != '/' and request.path != '/signup' %}
+        <div class="list-group list-group-flush">
+            {{ macro_sidebar('dash', 'Dashboard') }}
+            {{ macro_sidebar('index_users', 'Users') }}
+            {{ macro_sidebar('logout', 'Logout') }}
+        </div>
+        <div class="col-sm-12">
+            {{ flash_alerts() }}
+        </div>
+    <!-- /#sidebar-wrapper -->
+
+    {% endif %}
+    <!-- Page Content -->
+
+    <!--main content-->
+    <div class="container-fluid p-3">
+        {% block content %}{% endblock %}
+    </div>
+    <!--/main content-->
+
+    <!--scripts datatables-->
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable({
+                
+            });
+        } );
+    </script>
+    <!--/scripts datatables-->
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+
+</body>
+</html>

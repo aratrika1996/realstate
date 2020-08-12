@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Roboto:wght@400;700&display=swap');
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    padding: 0 6rem;
+}
+
+.logo {
+    height: 8rem;
+}
+
+.navbar {
+    align-items: flex-start;
+    padding: 2.5rem 0 0;
+}
+
+.nav-item {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    padding-left: 2rem;
+}
+
+.nav-link:hover {
+    color: #660000 !important;
+}
+
+#title {
+    padding: 0 6rem;
+}
+
+.title-heading {
+    margin: auto;
+}
+
+.heading-text {
+    font-size: 4.7rem;
+    font-family: 'Prata', serif;
+    color: #707070;
+    line-height: 1.5;
+}
+
+.header-ss {
+    display: none;
+}
+
+.ss {
+    width: 100%;
+    height: 82vh;
+    padding-left: 4.5rem;
+    /* z-index: 1; */
+}
+
+.carousel-fade .carousel-item {
+    transition-duration: .6s;
+}
+
+.intro {
+    background-image: linear-gradient(to bottom, #fff, #CA9F7545);
+    font-size: 1.7rem;
+    text-align: center;
+    color: #707070;
+    padding: 20rem 10rem 5rem;
+    position: relative;
+    top: -15rem;
+    z-index: -1;
+}
+
+#mobile-title {
+    display: none;
+}
+
+.feature-heading {
+    font-size: 4rem;
+    font-family: 'Prata', serif;
+    color: #660000;
+    text-align: center;
+    margin: -5rem 0 6rem 0;
+}
+
+#feature .row1 {
+    height: 30rem;
+}
+
+#feature .row2 {
+    height: 20rem;
+    background-image: linear-gradient(0deg, #CA9F7545, #F6F5F538);
+}
+
+.card {
+    width: 37rem;
+    border: none;
+    border-radius: 1.5rem;
+    margin: auto;
+    /* padding-top: 4rem; */
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.26);
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.26);
+}
+
+.card-body {
+    padding: 2rem 6rem 2rem 4.5rem;
+}
+
+.card-title {
+    font-size: 1.7rem;
+    color: #660000;
+    margin-bottom: 1.2rem;
+}
+
+.card-text {
+    margin-top: 1.7rem;
+}
+
+.card-subtitle,
+.card-text {
+    font-size: 1.3rem;
+    color: #707070;
+}
+
+.dot {
+    color: #660000;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.more {
+    color: #660000;
+    font-size: 1.4rem;
+}
+
+.arrow {
+    margin-left: -.6rem;
+    height: 2rem;
+}
+
+.explore {
+    background-color: #CA9F7545;
+    padding: 6rem 0 8rem;
+}
+
+.explore-button {
+    margin: auto;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #660000;
+    border: .2rem solid #660000;
+    border-radius: 2.5rem;
+    padding: .8rem 2rem;
+}
+
+footer {
+    background-color: #660000;
+    padding: 7rem 6rem 1rem;
+}
+
+footer .row1 {
+    padding-bottom: 4rem;
+}
+
+footer .row2 {
+    font-size: 1.5rem;
+    padding-bottom: 5rem;
+}
+
+footer .row2 li {
+    list-style: none;
+    padding-bottom: 1rem;
+}
+
+footer a:link,
+footer a:visited {
+    color: #fff !important;
+}
+
+
+/* .col2 a:link {
+    color: #fff;
+} */
+
+.social-icon {
+    height: 2.5rem;
+    padding-right: 2rem;
+}
+
+.copyright {
+    color: #f8f8f8;
+    font-size: 1.1rem;
+}
+
+#faq {
+    padding: 6rem;
+}
+
+.qstn {
+    color: #660000;
+    font-size: 1.75rem;
+}
+
+.ans {
+    color: #707070;
+    font-size: 1.4rem;
+}
+
+@media (min-width: 760px) {
+    .card1 {
+        margin-left: 6rem;
+    }
+    .card3 {
+        margin-right: 6rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 0;
+    }
+    .navbar {
+        align-items: center;
+        padding: 2rem;
+        /* background-color: transparent !important; */
+    }
+    .navbar-toggler {
+        border: none;
+    }
+    .logo {
+        height: 5rem;
+    }
+    #slideshow1 {
+        position: relative;
+        top: -11rem;
+        z-index: -1;
+    }
+    .header-ss {
+        display: block;
+        width: 100%;
+        height: 70vh;
+        padding-left: 0;
+    }
+    #title {
+        display: none;
+    }
+    #mobile-title {
+        display: block;
+    }
+    .title-heading {
+        margin: 0;
+        position: relative;
+        top: -5rem;
+        left: 2.5rem;
+    }
+    .heading-text {
+        display: inline-block;
+        font-size: 2.8rem;
+        font-family: 'Prata', serif;
+        color: #660000;
+        line-height: 1.5;
+    }
+    .intro {
+        background-image: linear-gradient(to bottom, #fff 10%, #CA9F7545 90%);
+        font-size: 1.2rem;
+        text-align: left;
+        color: #707070;
+        padding: 5rem 2rem 5rem 3rem;
+        border-radius: 0 0 0 2rem;
+        position: relative;
+        top: -10rem;
+        z-index: -1;
+    }
+    .feature-heading {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+    }
+    #feature .row1 {
+        height: 25rem;
+    }
+    #feature .row2 {
+        height: 20rem;
+        /* background-image: linear-gradient(0deg, #CA9F7545, #F6F5F538); */
+    }
+    .card {
+        width: 30rem;
+        margin: 5rem auto;
+        /* height: 25rem; */
+    }
+    .card-img-top {
+        height: 20rem;
+    }
+    .card-body {
+        padding: 2rem 2.5rem;
+    }
+    .card-title {
+        margin-bottom: .5rem;
+    }
+    .card-text {
+        margin-top: .8rem;
+    }
+    .explore {
+        padding: 0 0 5rem;
+    }
+    footer {
+        padding-left: 2.5rem;
+    }
+    footer .row2 ul {
+        padding: 0;
+    }
+    .col1,
+    .col2,
+    .col3 {
+        padding-bottom: 5rem;
+    }
+    .social-icon {
+        height: 2rem;
+    }
+    footer .row2 {
+        font-size: 1.6rem;
+    }
+}
