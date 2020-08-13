@@ -25,9 +25,5 @@ csrf = CSRFProtect()
 #Config and load CSRF
 csrf.init_app(app)
 
-#init db
-#db.init_app(app)
-#with app.app_context():
-#    db.create_all()
-
+from webapp.controllers import *
 from webapp.controllers import *

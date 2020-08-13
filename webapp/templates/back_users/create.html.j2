@@ -1,5 +1,5 @@
 <!--Head-->
-{% extends 'base.html.j2' %}
+{% extends 'base_back.html.j2' %}
 {% from './_macros/_macro_input_form.html.j2' import render_field %}
 {% block title %} {{ title }} {% endblock %}
 <!--/end Head-->
@@ -15,17 +15,23 @@
 						<form method="POST">
 							<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 							<div class="form-group">
-								{{ render_field(form.fullname,class="form-control",value=data.fullname) }}
+								{{ render_field(form.fullname,class="form-control") }}
 							</div>
 							<div class="form-group">
-								{{ render_field(form.username,class="form-control",value=data.username) }}
+								{{ render_field(form.username,class="form-control") }}
 							</div>
 							<div class="form-group">
-								{{ render_field(form.email,class="form-control",value=data.email) }}
+								{{ render_field(form.email,class="form-control") }}
 							</div>
-							<button type="submit" class="btn btn-primary">Update</button>
+							<div class="form-group">
+								{{ render_field(form.password,class="form-control") }}
+							</div>
+							<div class="form-group">
+								{{ render_field(form.confirm_pass,class="form-control") }}
+							</div>
+							<button type="submit" class="btn btn-primary">Create</button>
 						</form>
-						<p class="m-t-sm"><a href="{{ url_for('index_users') }}">Back</a></p>
+						<p class="m-t-sm"><a href="{{ url_for('index_users') }}">Back to users list</a></p>
 					</div>
 					<div class="col-sm-12">
 						<!--errors-->

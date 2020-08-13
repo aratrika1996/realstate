@@ -31,4 +31,4 @@ def dash():
     #get all
     users = User.query.all()
 
-    return render_template('dash.html.j2', users = users)
+    return render_template('back_dashboard/index.html.j2', users = users)

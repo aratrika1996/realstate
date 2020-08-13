@@ -1,0 +1,56 @@
+<!--Head-->
+{% extends 'base_front.html.j2' %}
+{% block title %} {{ title }} {% endblock %}
+<!--/end Head-->
+
+<!--Content-->
+{% block content %}
+<section id="feature">
+    <h1 class="feature-heading">Featured Properties</h1>
+    <div class="row no-gutters">
+        <div class="col-lg-4">
+            <div class="row no-gutters row1">
+                <div class="card card1">
+                    <img src="{{ url_for('static', filename='images/319DrydenRd - Copy.png') }}" class="card-img-top" alt="319">
+                    <div class="card-body">
+                        <h5 class="card-title">319 Dryden Rd, Ithaca, NY</h5>
+                        <h6 class="card-subtitle">4 Bedrooms <span class="dot">.</span> 1 Bathroom</h6>
+                        <p class="card-text">Fully furnished four bedrooms, one bath, living room, dining room, kitchen. <a href=""><span class="more">More</span> <img src="{{ url_for('static', filename='images/chevron_right-24px.png') }}" class="arrow"></a></p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters row2"></div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row no-gutters row1">
+                <div class="card card2">
+                    <img src="{{ url_for('static', filename='images/226 Linden Ave Exterior.png') }}" class="card-img-top" alt="319">
+                    <div class="card-body">
+                        <h5 class="card-title">226 Linden Ave, Ithaca, NY</h5>
+                        <h6 class="card-subtitle">4 Bedrooms <span class="dot"> .</span> 1 Bathroom</h6>
+                        <p class="card-text">Fully furnished four bedrooms, one bath, living room, dining room, kitchen. <a href=""><span class="more">More</span> <img src="{{ url_for('static', filename='images/chevron_right-24px.png') }}" class="arrow"></a></p>                        
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters row2"></div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row no-gutters row1">
+                <div class="card card3">                
+                    <img src="{{ url_for('static', filename='images/304BryantAve.png') }}" class="card-img-top" alt="319">
+                    <div class="card-body">
+                        <h5 class="card-title">304 Bryant Ave, Ithaca, NY</h5>
+                        <h6 class="card-subtitle">4 Bedrooms <span class="dot">.</span> 1 Bathroom</h6>
+                        <p class="card-text">Fully furnished four bedrooms, one bath, living room, dining room, kitchen. <a href=""><span class="more">More</span> <img src="{{ url_for('static', filename='images/chevron_right-24px.png') }}" class="arrow"></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters row2"></div>
+        </div>
+    </div>
+    <div class="row no-gutters explore">
+        <button class="btn explore-button">Explore More Properties</button>
+    </div>
+</section>
+{% endblock %}
+<!--/end Content-->

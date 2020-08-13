@@ -1,45 +1,40 @@
 <!--Head-->
-{% extends 'base.html.j2' %}
+{% extends 'base_back.html.j2' %}
 {% from './_macros/_macro_input_form.html.j2' import render_field %}
 {% block title %} {{ title }} {% endblock %}
 <!--/end Head-->
+
 <!--Content-->
 {% block content %}
-	<!--container-->
+   
 	<div class="container text-center mt-4">
 		<div class="row justify-content-md-center">
 			<div class="col-md-auto mx-auto">
 				<div class="card" style="width: 45rem;">
 					<div class="card-body col-12">
+					<h2>User: {{ data.username }}</h2>
 						<form method="POST">
 							<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 							<div class="form-group">
-								{{ render_field(form.username, class="form-control") }}
+								{{ render_field(form.password,class="form-control") }}
 							</div>
 							<div class="form-group">
-								{{ render_field(form.password, class="form-control") }}
+								{{ render_field(form.confirm_pass,class="form-control") }}
 							</div>
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 						</form>
-						<br/>
-						<br/>
-						<p class="m-t-sm"><a href="{{ url_for('signup') }}">Create an account</a></p>
+						<p class="m-t-sm"><a href="{{ url_for('index_users') }}">Back</a></p>
 					</div>
 					<div class="col-sm-12">
 						<!--errors-->
 						{% if form.errors %}
-							<div class="alert alert-warning alert-dismissible fade show text-left" role="alert">
-								<ul>
-									{% for field in form.errors %}
-										{% for error in form.errors[field] %}
-											<li><strong>{{ error }}</strong></li>
-										{% endfor %}
+							<ul>
+								{% for field in form.errors %}
+									{% for error in form.errors[field] %}
+										<li class="alert alert-warning fade show text-left" ><strong>{{ error }}</strong></li>
 									{% endfor %}
-								</ul>
-								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-									<span aria-hidden="true">×</span>
-								</button>
-							</div>
+								{% endfor %}
+							</ul>
 						{% endif %}
 						<!--/end errors-->
 
@@ -53,4 +48,3 @@
 	</div><!--/container-->
 {% endblock %}
 <!--/end Content-->
-   

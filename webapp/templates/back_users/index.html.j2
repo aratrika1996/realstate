@@ -1,5 +1,5 @@
 <!--Head-->
-{% extends 'base.html.j2' %}
+{% extends 'base_back.html.j2' %}
 {% block title %} {{ title }} {% endblock %}
 <!--/end Head-->
 
@@ -28,8 +28,8 @@
                         <td><a href="{{ url_for('update_user', id=user.id) }}">{{ user.fullname }}</a></td>
                         <td><a href="{{ url_for('update_user', id=user.id) }}">{{ user.email }}</a></td>
                         <td>
-                        <a href="{{ url_for('update_pass_user', id=user.id) }}" title="Change Password"><i class="fas fa-lock"></i></a>
-                        <a href="{{ url_for('delete_user', id=user.id) }}" title="Change Password"><i class="fas fa-trash"></i></a>
+                        <a href="{{ url_for('update_pass_user', id=user.id) }}" title="Change Password"><i class="fa fa-lock"></i></a>
+                        <a href="{{ url_for('delete_user', id=user.id) }}" title="Change Password"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
                     {% endif %}

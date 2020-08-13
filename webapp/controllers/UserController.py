@@ -36,7 +36,7 @@ def index_users():
     #get all
     users = User.query.all()
 
-    return render_template('users/index.html.j2',title = title, users = users)
+    return render_template('back_users/index.html.j2',title = title, users = users)
 
 
 #route create
@@ -57,7 +57,7 @@ def create_users():
 
             flash(msj,"danger")
             
-            return render_template('users/create.html.j2',title = title, form = signup_form)
+            return render_template('back_users/create.html.j2',title = title, form = signup_form)
         
         elif check_email is not None:
 
@@ -65,7 +65,7 @@ def create_users():
 
             flash(msj,"danger")
             
-            return render_template('users/create.html.j2',title = title, form = signup_form)
+            return render_template('back_users/create.html.j2',title = title, form = signup_form)
 
         else:
 
@@ -85,10 +85,10 @@ def create_users():
             msj = "Registro exitoso."
             flash(msj,"success")
 
-        return redirect(url_for('index_user'))
+        return redirect(url_for('index_users'))
 
     else:
-        return render_template('users/create.html.j2',title = title, form = signup_form)
+        return render_template('back_users/create.html.j2',title = title, form = signup_form)
 
 
 @app.route('/updateuser/<int:id>', methods=['GET','POST'])
@@ -111,7 +111,7 @@ def update_user(id):
         return redirect( url_for('index_users') )
 
     else:
-        return render_template('users/update.html.j2', id= id, title = title, data = data, form = form)
+        return render_template('back_users/update.html.j2', id= id, title = title, data = data, form = form)
 
 
 
@@ -133,7 +133,7 @@ def update_pass_user(id):
         return redirect( url_for('index_users') )
 
     else:
-        return render_template('users/update_pass.html.j2', id= id, title = title, data = data, form = form)
+        return render_template('back_users/update_pass.html.j2', id= id, title = title, data = data, form = form)
 
 
 @app.route('/deleteuser/<int:id>', methods=['GET'])

@@ -43,17 +43,17 @@ def login():
                 msj = "Incorrect data, try again"
                 flash(msj,"danger")
                 
-            return render_template('auth/login.html.j2',title = title, form = login_form)
+            return render_template('back_auth/login.html.j2',title = title, form = login_form)
 
         else:
 
             msj = "This user does not exist"
             flash(msj,"danger")
-            return render_template('auth/login.html.j2',title = title, form = login_form)
+            return render_template('back_auth/login.html.j2',title = title, form = login_form)
 
 
     else:
-        return render_template('auth/login.html.j2',title = title, form = login_form)
+        return render_template('back_auth/login.html.j2',title = title, form = login_form)
 
 @app.route('/signup', methods = ['GET','POST'])
 def signup():
@@ -73,7 +73,7 @@ def signup():
 
             flash(msj,"danger")
             
-            return render_template('auth/signup.html.j2',title = title, form = signup_form)
+            return render_template('back_auth/signup.html.j2',title = title, form = signup_form)
         
         elif check_email is not None:
 
@@ -81,7 +81,7 @@ def signup():
 
             flash(msj,"danger")
             
-            return render_template('auth/signup.html.j2',title = title, form = signup_form)
+            return render_template('back_auth/signup.html.j2',title = title, form = signup_form)
 
         else:
 
@@ -101,11 +101,11 @@ def signup():
             msj = "Registro exitoso."
             flash(msj,"success")
 
-            return render_template('auth/login.html.j2',title = title, form = login_form)
+            return render_template('back_auth/login.html.j2',title = title, form = login_form)
 
     else:
 
-        return render_template('auth/signup.html.j2',title = title, form = signup_form)
+        return render_template('back_auth/signup.html.j2',title = title, form = signup_form)
 
 
 @app.route('/logout')

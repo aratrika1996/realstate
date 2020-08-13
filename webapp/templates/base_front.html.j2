@@ -1,0 +1,232 @@
+{# 
+  /*********** feature macro block ***********/
+#}
+{# {% from '_macros/_macro_flash_alerts.html.j2' import flash_alerts %} #}
+{% from '_macros/_macro_navbar.html.j2' import macro_nav %}
+{% from '_macros/_macro_footer_nav.html.j2' import macro_footer_nav %}
+{#   
+  /*********** /end feature macro block ***********/
+#}
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!--Meta Tags-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width"/>
+    <meta autor="reddev">
+
+    <!--Title-->
+    <title>{% block title %} {% endblock %}</title>
+    
+    {# 
+      /*********** styles css ***********/
+    #}
+    <!--bootstrap-->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <!--custom-->
+    <link href="{{ url_for('static', filename='custom-css/style.css') }}" rel="stylesheet" type="text/css">
+    <!--bootstrapstudio-->
+    <link rel="stylesheet" href="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.css">
+    <!--Data tables-->
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+    {# 
+      /*********** /end styles css ***********/
+    #}
+</head>
+<body> 
+    {# 
+      /*********** web top ***********/
+    #}
+    {# if the path is the same as above: show the items; otherwise hide them #}
+    {% if request.path == '/' or request.path == '/about'%}
+      <!--header-->
+      <header>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="{{ url_for('home') }}"><img src="{{ url_for('static', filename='images/Group 11.png') }}" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="menu-icon"><img src="{{ url_for('static', filename='images/Mask Group 1.png') }}"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!--links-->
+                <ul class="navbar-nav ml-auto">
+                    {{ macro_nav('home', 'Apartments') }}
+                    {{ macro_nav('home', 'Houses') }}
+                    {{ macro_nav('home', 'Parking') }}
+                    {{ macro_nav('home', 'Commercial') }}
+                    {{ macro_nav('about', 'About Us') }}
+                    {{ macro_nav('home', 'FAQs') }}
+                    {{ macro_nav('home', 'Contact Us') }}
+                    {{ macro_nav('home', 'Residents') }}
+                </ul>
+                <!--/end links-->
+            </div>
+        </nav>
+        <!--/end navbar-->
+        <!--slider-->
+        <div id="slideshow1" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-interval="3500">
+                    <img src="{{ url_for('static', filename='images/slideshow/6.jpg') }}" class="header-ss" alt="...">
+                </div>
+                    <img src="{{ url_for('static', filename='images/slideshow/1.jpg') }}" class="header-ss" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img src="{{ url_for('static', filename='images/slideshow/2.jpg') }}" class="header-ss" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img src="{{ url_for('static', filename='images/slideshow/3.jpg') }}" class="header-ss" alt="...">
+                </div>
+                <div class="carousel-item" data-interval="1750">
+                    <img src="{{ url_for('static', filename='images/slideshow/5.jpg') }}" class="header-ss" alt="...">
+                </div>
+            </div>
+        </div>
+        <!--/end slider-->
+      </header>
+      <!--/end header-->
+
+      <!--section title-->
+      <section id="title">
+        <div class="row">
+            <div class="col-lg-3 title-heading">
+                <h1 class="heading-text">{{ heading_text }}</h1>
+            </div>
+            <div class="col-lg-9">
+                <div id="slideshow" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="3500">
+                            <img src="{{ url_for('static', filename='images/slideshow/6.jpg') }}" class="d-block ss" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="1750">
+                            <img src="{{ url_for('static', filename='images/slideshow/1.jpg') }}" class="d-block ss" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="1750">
+                            <img src="{{ url_for('static', filename='images/slideshow/2.jpg') }}" class="d-block ss" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="1750">
+                            <img src="{{ url_for('static', filename='images/slideshow/3.jpg') }}" class="d-block ss" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="1750">
+                            <img src="{{ url_for('static', filename='images/slideshow/5.jpg') }}" class="d-block ss" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro">
+            <p>Urban Ithaca Real Estate, centrally located in Collegetown, is pleased to offer a variety of housing choices, between a one to five minute walk to campus. We have over 120 apartments & houses to fit every need, from studios to eleven bedrooms,
+                for grads and undergrads, from large grand houses to mordern urban style apartments. All of our Collegetown apartments come fully furnished, with a variety of amenities, such as modern kitchens, granite counter tops, tiled floors, high
+                speed internet and so much more.</p>
+        </div>
+      </section>
+      <!--/end section title-->
+
+      <!--section mobile title-->
+      <section id="mobile-title">
+        <div class="row no-gutters">
+            <div class="col-5 title-heading">
+                <h1 class="heading-text">Study. Dine. Relax. Play.</h1>
+            </div>
+            <div class="col-7">
+                <div class="intro">
+                    <p>Urban Ithaca Real Estate, centrally located in Collegetown, is pleased to offer a variety of housing choices, between a one to five minute walk to campus. We have over 120 apartments & houses to fit every need, from studios to eleven
+                        bedrooms, for grads and undergrads, from large grand houses to mordern urban style apartments. All of our Collegetown apartments come fully furnished, with a variety of amenities, such as modern kitchens, granite counter tops,
+                        tiled floors, high speed internet and so much more.</p>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!--/end section mobile title-->
+
+    {% endif %}
+    {# 
+      /*********** /end web top ***********/
+    #}
+
+    <!--main content-->
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+    <!--/end main content-->
+
+    {# 
+      /*********** web footer ***********/
+    #}
+    {# if the path is the same as above: show the items; otherwise hide them #}
+    {% if request.path == '/' or request.path == '/about'%}
+      <footer class="text-white">
+        <div class="row no-gutters row1">
+            <img src="{{ url_for('static', filename='images/Group 12.png') }}" class="logo">
+        </div>
+        <div class="row no-gutters row2">
+            <div class="col-lg-4 col1">
+                <p>307 College Ave, Ithaca, NY, 14850</p>
+                <p>T: 607 - 330 24 42</p>
+                <p>E: <a href="mailto: info@urbanithaca.com">info@urbanithaca.com</a></p>
+            </div>
+            <div class="col-lg-2 col-6 col2">
+                <ul>
+                    {{ macro_footer_nav('home', 'Apartments') }}
+                    {{ macro_footer_nav('home', 'Houses') }}
+                    {{ macro_footer_nav('home', 'Parking') }}
+                    {{ macro_footer_nav('home', 'Commercial') }}
+                </ul>
+            </div>
+            <div class="col-lg-3 col-6 col3">
+                <ul>
+                    {{ macro_footer_nav('about', 'About Us') }}
+                    {{ macro_footer_nav('home', 'FAQs') }}
+                    {{ macro_footer_nav('home', 'Contact Us') }}
+                </ul>
+            </div>
+            <div class="col-lg-3 col4">
+                <a href=""><img src="{{ url_for('static', filename='images/facebook-logo.png') }}" alt="fb" class="social-icon"></a>
+                <a href=""><img src="{{ url_for('static', filename='images/twitter.png') }}" alt="twitter" class="social-icon"></a>
+                <a href=""><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin" class="social-icon"></a>
+                <a href=""><img src="{{ url_for('static', filename='images/instagram-sketched.png') }}" alt="insta" class="social-icon"></a>
+            </div>
+        </div>
+        <div class="row no-gutters copyright">
+            <p>&copy;<span id="year"></span> Urban Ithaca. All Rights Reserved.</p>
+        </div>
+      </footer>
+    {% endif %}
+
+    {# 
+      /*********** /end web footer ***********/
+    #}
+
+    {# 
+      /*********** scritpts javascripts ***********/
+    #}
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--bootstrap-->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!--bootstrapstudio-->
+    <script src="https://unpkg.com/@bootstrapstudio/bootstrap-better-nav/dist/bootstrap-better-nav.min.js"></script>
+    <!--jsdelivr-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!--scripts datatables-->
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <!--function datatable-->
+    <script>
+        $(document).ready(function() {
+            $('#datatable').DataTable({
+                
+            });
+        } );
+    </script>
+    <!--year function-->
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+    {# 
+      /*********** /end scritpts javascripts ***********/
+    #}
+
+</body>
+</html>

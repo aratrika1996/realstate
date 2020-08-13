@@ -1,0 +1,5 @@
+{% macro macro_footer_nav(endpoint,text) %}
+    <li>
+        <a href="{{ url_for(endpoint) }}">{{text}}</a>
+    </li>
+{% endmacro %}
