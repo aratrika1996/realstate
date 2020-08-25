@@ -11,4 +11,4 @@ def before_request():
 def about():
     title = 'Urban Ithaca'
     heading_text = 'About Us'
-    return render_template('front_about/index.html.j2', title = title, heading_text = heading_text)
+    return render_template('public_about/index.html.j2', title = title, heading_text = heading_text)
