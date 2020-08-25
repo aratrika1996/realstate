@@ -7,8 +7,8 @@ def before_request():
     pass
 
 #route home
-@app.route('/', methods = ['GET'])
-def home():
+@app.route('/search', methods = ['GET'])
+def search():
     title = 'Urban Ithaca'
     heading_text = 'Urban Ithaca'
-    return render_template('public_home/index.html.j2', title = title, heading_text = heading_text)
+    return render_template('public_search/index.html.j2', title = title, heading_text = heading_text)

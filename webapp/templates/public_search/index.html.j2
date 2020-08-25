@@ -1,0 +1,54 @@
+<!--Head-->
+{% extends 'base_front.html.j2' %}
+{% block title %} {{ title }} {% endblock %}
+<!--/end Head-->
+<!--Content-->
+{% block content %}
+<section class="show-result">
+    <div class="result">
+
+        <div id="main">
+            <div>
+                <button id="openbtn" onclick="openNav()">Show Map</button>
+            </div>
+
+            <div class="rr">
+                <div class="sm" style='border: 1px solid red'>
+                    <div class="card">
+                        <img src=" {{ url_for('static', filename='images/226 Linden Ave Exterior.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm">
+                    <div class="card">
+                        <img src=" {{ url_for('static', filename='images/226 Linden Ave Exterior.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sm">
+                    <div class="card">
+                        <img src=" {{ url_for('static', filename='images/226 Linden Ave Exterior.png') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Primary card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <img src="{{ url_for('static', filename='images/UrbanIthaca-Vector-Map-copy.png') }}" alt="" class="map">
+        </div>
+    </div>
+</section>
+{% endblock %}
+<!--/end Content-->
+   

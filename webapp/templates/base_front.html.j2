@@ -39,7 +39,7 @@
       /*********** web top ***********/
     #}
     {# if the path is the same as above: show the items; otherwise hide them #}
-    {% if request.path == '/' or request.path == '/about'%}
+    {% if request.path == '/' or request.path == '/about' or request.path == '/search'%}
       <!--header-->
       <header>
         <!--navbar-->
@@ -84,9 +84,11 @@
             </div>
         </div>
         <!--/end slider-->
+
       </header>
       <!--/end header-->
 
+      {% if request.path != '/search'%}
       <!--section title-->
       <section id="title">
         <div class="row">
@@ -122,7 +124,7 @@
         </div>
       </section>
       <!--/end section title-->
-
+      {% endif %}
       <!--section mobile title-->
       <section id="mobile-title">
         <div class="row no-gutters">
@@ -155,7 +157,7 @@
       /*********** web footer ***********/
     #}
     {# if the path is the same as above: show the items; otherwise hide them #}
-    {% if request.path == '/' or request.path == '/about'%}
+    {% if request.path == '/' or request.path == '/about' or request.path == '/search'%}
       <footer class="text-white">
         <div class="row no-gutters row1">
             <img src="{{ url_for('static', filename='images/Group 12.png') }}" class="logo">
@@ -212,13 +214,40 @@
     <!--scripts datatables-->
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <!--function datatable-->
+    <!--custom-->
+    <script src="{{ url_for('static', filename='custom-js/index.js') }}">
     <script>
         $(document).ready(function() {
             $('#datatable').DataTable({
                 
             });
         } );
+    </script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "750px";
+            document.getElementById("main").style.marginRight = "750px";
+            document.getElementById("main").style.height = "80rem";
+            document.getElementById("main").style.overflowY = "scroll";
+            document.getElementById("openbtn").style.visibility = "hidden";
+            var x = document.getElementsByClassName("rr");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.flexDirection = "column";
+            }
+
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight = "0";
+            document.getElementById("main").style.height = "auto";
+            document.getElementById("main").style.overflowY = "hidden";
+            document.getElementById("openbtn").style.visibility = "visible";
+            var x = document.getElementsByClassName("rr");
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.flexDirection = "row";
+            }
+        }
     </script>
     <!--year function-->
     <script>
