@@ -9,7 +9,7 @@ import webapp.forms.UpdateUserForm as Uform
 import webapp.forms.UpdatePassForm as UPform
 
 """DATABASES"""
-from webapp.models.UserModel import UserModel as User
+from webapp.models.AllModels import UserModel as User
 
 @app.errorhandler(404)
 def error_404(e):

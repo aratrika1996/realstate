@@ -4,7 +4,7 @@ from flask import render_template, redirect, url_for, request, session, flash
 import webapp.forms.LoginForm as form
 
 """DATABASES"""
-from webapp.models.UserModel import UserModel as User
+from webapp.models.AllModels import UserModel as User
 
 @app.errorhandler(404)
 def error_404(e):

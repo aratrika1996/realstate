@@ -7,7 +7,7 @@ import webapp.forms.LoginForm as lform
 import webapp.forms.SignupForm as sform
 
 """DATABASES"""
-from webapp.models.UserModel import UserModel as User
+from webapp.models.AllModels import UserModel as User
 
 #route index
 @app.route('/login', methods = ['GET','POST'])
