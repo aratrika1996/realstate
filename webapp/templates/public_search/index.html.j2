@@ -41,6 +41,37 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Modified by Aratrika -->
+            <!-- {% set items = ["Property1","Property2","Property3","Property4","Property5","Property6","Property7"] %} 
+            {% set d = math.floor(len(items)/3) %} 
+            {% if ((len(items)%3) == 0 %} 
+                {% set row = d %} 
+                {% else %} 
+                    {% set row = d+1 %} 
+            {% end if %} 
+            {% set c = 0 %}
+            <div class="result">
+                {% for i in range(0, row) %} 
+                    {% if (c+3) < len(items) %} 
+                        {% set nc=c +3 %} 
+                    {% else %} 
+                        {% set nc=len(items) %} 
+                    {% end if %} 
+                <div class="rr">
+                    {% for j in range(c,nc) %}
+                        <div class="card">
+                            <img src=" {{ url_for('static', filename='images/226 Linden Ave Exterior.png') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{items[j]}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    {% end for %}
+                </div>
+                {% set c = c+3 %} 
+                {% end for %}
+            </div> -->
 
         </div>
         <div id="mySidebar" class="sidebar">
